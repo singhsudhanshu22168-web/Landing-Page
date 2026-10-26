@@ -20,39 +20,39 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenBooking })
       {/* Background Gold Glow Light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(198,166,107,0.15)_0%,transparent_70%)] pointer-events-none z-[2]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <div className="flex justify-center mb-5">
           <Logo size="lg" showText={false} animateGlow />
         </div>
 
-        <span className="text-xs font-semibold tracking-[0.4em] gold-text uppercase block mb-3">
+        <span className="text-[10px] sm:text-xs font-semibold tracking-[0.3em] sm:tracking-[0.4em] gold-text uppercase block mb-3">
           Reserve Your Experience
         </span>
 
-        <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-medium tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-6xl md:text-7xl text-white font-medium tracking-tight">
           YOUR NEXT <br />
           <span className="gold-text italic font-normal">SIGNATURE LOOK STARTS HERE.</span>
         </h2>
 
-        <p className="mt-4 text-sm text-champagne/70 max-w-xl mx-auto font-light leading-relaxed tracking-wide">
+        <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-champagne/70 max-w-xl mx-auto font-light leading-relaxed tracking-wide">
           Elevate your personal grooming ritual with our master artisans. Choose your preferred service, specialist, date, and time.
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full max-w-sm sm:max-w-none mx-auto">
           <button
             onClick={onOpenBooking}
-            className="px-10 py-5 bg-gold-gradient text-black font-semibold text-xs tracking-[0.25em] uppercase transition-all duration-500 shadow-[0_0_35px_rgba(212,175,55,0.4)] hover:shadow-[0_0_60px_rgba(212,175,55,0.7)] hover:scale-105 flex items-center gap-2"
+            className="w-full sm:w-auto px-7 sm:px-10 py-4 sm:py-5 bg-gold-gradient text-black font-semibold text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase transition-all duration-500 shadow-[0_0_35px_rgba(212,175,55,0.4)] hover:shadow-[0_0_60px_rgba(212,175,55,0.7)] hover:scale-105 flex items-center justify-center gap-2"
           >
             <Sparkles className="w-4 h-4" />
             BOOK AN APPOINTMENT
           </button>
 
           <a
-            href="https://wa.me/?text=Hello%20Priya%20Beauty%20Salon!%20I%20would%20like%20to%20inquire%20about%20booking%20an%20appointment."
+            href="https://wa.me/?text=Hello%20Salon%20Apple%20Ravet!%20I%20would%20like%20to%20inquire%20about%20booking%20an%20appointment."
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-5 border border-gold/40 text-gold font-semibold text-xs tracking-[0.25em] uppercase transition-all duration-300 hover:bg-gold/10 flex items-center gap-2"
+            className="w-full sm:w-auto px-7 sm:px-8 py-4 sm:py-5 border border-gold/40 text-gold font-semibold text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase transition-all duration-300 hover:bg-gold/10 flex items-center justify-center gap-2"
           >
             <MessageCircle className="w-4 h-4" />
             WHATSAPP BOOKING
@@ -94,7 +94,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenBooking })
               <h4 className="font-serif text-lg text-white font-medium">Direct Concierge</h4>
               <p className="text-xs text-champagne/70 font-light mt-1">
                 +91 98200 12345 <br />
-                concierge@priyabeautysalon.com
+                concierge@salonappleravet.com
               </p>
             </div>
           </div>

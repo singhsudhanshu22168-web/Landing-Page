@@ -49,23 +49,23 @@ interface ArtistsSectionProps {
 
 export const ArtistsSection: React.FC<ArtistsSectionProps> = ({ onBookArtist }) => {
   return (
-    <section className="relative py-20 md:py-24 bg-[#050505] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="relative py-16 md:py-24 bg-[#050505] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-14">
+        <div className="text-center mb-10 md:mb-14">
           <span className="text-xs font-semibold tracking-[0.3em] gold-text uppercase block mb-2">
             Master Artisans
           </span>
-          <h2 className="font-serif text-4xl md:text-6xl text-white font-medium">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-white font-medium">
             MEET THE ARTISTS
           </h2>
-          <p className="mt-4 text-champagne/70 text-sm max-w-xl mx-auto font-light">
+          <p className="mt-3 sm:mt-4 text-champagne/70 text-xs sm:text-sm max-w-xl mx-auto font-light leading-relaxed">
             Our internationally trained beauty directors bring passion, precision, and royal artistry to every appointment.
           </p>
         </div>
 
         {/* Editorial Artist Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {artistsData.map((artist) => (
             <div
               key={artist.id}
@@ -73,7 +73,7 @@ export const ArtistsSection: React.FC<ArtistsSectionProps> = ({ onBookArtist }) 
             >
               <div>
                 {/* Artist Photo */}
-                <div className="relative h-96 w-full overflow-hidden border-b border-gold/20">
+                <div className="relative h-72 sm:h-96 w-full overflow-hidden border-b border-gold/20">
                   <img
                     src={artist.imageUrl}
                     alt={artist.name}
@@ -88,18 +88,18 @@ export const ArtistsSection: React.FC<ArtistsSectionProps> = ({ onBookArtist }) 
                 </div>
 
                 {/* Artist Info */}
-                <div className="p-6">
-                  <h3 className="font-serif text-3xl text-white font-medium tracking-wider">
+                <div className="p-5 sm:p-6">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium tracking-wider">
                     {artist.name}
                   </h3>
-                  <span className="text-xs font-semibold tracking-[0.2em] text-gold uppercase block mt-1">
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] text-gold uppercase block mt-1">
                     {artist.role}
                   </span>
-                  <p className="mt-4 text-xs text-champagne/80 font-light leading-relaxed">
+                  <p className="mt-3 sm:mt-4 text-xs text-champagne/80 font-light leading-relaxed">
                     {artist.bio}
                   </p>
                   
-                  <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-champagne/70">
+                  <div className="mt-4 pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-champagne/70">
                     <span className="font-light">Specialty:</span>
                     <span className="gold-text font-medium text-[11px]">{artist.specialty}</span>
                   </div>
@@ -107,7 +107,7 @@ export const ArtistsSection: React.FC<ArtistsSectionProps> = ({ onBookArtist }) 
               </div>
 
               {/* Book Artist Button */}
-              <div className="p-6 pt-0">
+              <div className="p-5 sm:p-6 pt-0">
                 <button
                   onClick={() => onBookArtist(artist.name)}
                   className="w-full py-3 border border-gold/40 text-gold text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-gold-gradient hover:text-black flex items-center justify-center gap-2"

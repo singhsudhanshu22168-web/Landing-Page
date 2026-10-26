@@ -62,7 +62,7 @@ function MirrorImageReel() {
   const currentImg = BEAUTY_PORTFOLIO_IMAGES[currentIndex];
 
   return (
-    <div className="w-[305px] h-[305px] rounded-full overflow-hidden relative select-none pointer-events-none shadow-2xl bg-black">
+    <div className="w-[240px] h-[240px] sm:w-[305px] sm:h-[305px] rounded-full overflow-hidden relative select-none pointer-events-none shadow-2xl bg-black">
       {/* Animated Image Layer with Soft Crossfade & Ken Burns Zoom */}
       <AnimatePresence mode="popLayout">
         <motion.div
@@ -313,7 +313,7 @@ export const GoldenMirrorSection: React.FC<GoldenMirrorSectionProps> = ({ onOpen
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(198,166,107,0.1)_0%,transparent_70%)] pointer-events-none z-[2]" />
 
       {/* Container */}
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Top Filigree Accent */}
         <div className="flex items-center justify-center gap-4 mb-4 opacity-80">
           <div className="h-[1px] w-12 sm:w-20 bg-gradient-to-r from-transparent to-gold" />
@@ -326,13 +326,13 @@ export const GoldenMirrorSection: React.FC<GoldenMirrorSectionProps> = ({ onOpen
         </p>
 
         {/* Section Main Title Banner */}
-        <h2 className="text-center font-serif text-3xl sm:text-5xl md:text-6xl font-light text-white tracking-wide mb-12">
+        <h2 className="text-center font-serif text-3xl sm:text-5xl md:text-6xl font-light text-white tracking-wide mb-8 sm:mb-12">
           THE GOLDEN MIRROR
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
           {/* 3D WebGL Mirror Canvas Container */}
-          <div className="lg:col-span-5 flex justify-center items-center h-[340px] sm:h-[420px] relative">
+          <div className="lg:col-span-5 flex justify-center items-center h-[280px] sm:h-[420px] relative">
             {mounted ? (
               <div className="w-full h-full relative">
                 <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
@@ -344,7 +344,7 @@ export const GoldenMirrorSection: React.FC<GoldenMirrorSectionProps> = ({ onOpen
                 </Canvas>
               </div>
             ) : (
-              <div className="w-[305px] h-[305px] rounded-full border-2 border-gold/30 bg-surface/50 backdrop-blur animate-pulse flex items-center justify-center overflow-hidden">
+              <div className="w-[240px] h-[240px] sm:w-[305px] sm:h-[305px] rounded-full border-2 border-gold/30 bg-surface/50 backdrop-blur animate-pulse flex items-center justify-center overflow-hidden">
                 <MirrorImageReel />
               </div>
             )}
@@ -352,7 +352,7 @@ export const GoldenMirrorSection: React.FC<GoldenMirrorSectionProps> = ({ onOpen
 
           {/* Interactive Steps Card Container */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-8 sm:p-10 md:p-12 rounded-2xl border border-gold/20 relative shadow-2xl overflow-hidden min-h-[380px] flex flex-col justify-center">
+            <div className="glass-panel p-4 sm:p-10 md:p-12 rounded-2xl border border-gold/20 relative shadow-2xl overflow-hidden min-h-[340px] sm:min-h-[380px] flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 {/* --- INTRO DISPLAY --- */}
                 {step === "intro" && (

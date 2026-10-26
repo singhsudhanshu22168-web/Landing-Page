@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       {/* LAYER 05 & 06 — Existing Logo, Typography & Action Buttons */}
       {/* ============================================================ */}
       <div
-        className="relative z-[10] max-w-6xl mx-auto px-6 text-center flex flex-col items-center justify-center transition-transform duration-300 ease-out"
+        className="relative z-[10] max-w-6xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center transition-transform duration-300 ease-out"
         style={{
           transform: reducedMotion
             ? "none"
@@ -63,32 +63,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         }}
       >
         {/* Editorial Sub-badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/35 bg-[#080808]/70 backdrop-blur-md mb-6 animate-fadeIn shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
-          <Crown className="w-3.5 h-3.5 text-gold" />
-          <span className="text-[11px] font-medium tracking-[0.3em] uppercase text-champagne/90">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-gold/35 bg-[#080808]/70 backdrop-blur-md mb-6 animate-fadeIn shadow-[0_4px_20px_rgba(0,0,0,0.5)] max-w-full">
+          <Crown className="w-3.5 h-3.5 text-gold flex-shrink-0" />
+          <span className="text-[9px] sm:text-[11px] font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-champagne/90 leading-tight">
             The Royal Atelier of Haute Beauté
           </span>
         </div>
 
         {/* Large Editorial Headline */}
-        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white leading-[1.05] max-w-5xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
+        <h1 className="font-serif text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white leading-[1.1] sm:leading-[1.05] max-w-5xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
           YOUR BEAUTY. <br />
           <span className="italic font-normal gold-text">YOUR SIGNATURE.</span>
         </h1>
 
         {/* Sub-description */}
-        <p className="mt-4 text-sm sm:text-base md:text-lg text-champagne/80 max-w-2xl font-light tracking-wide leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+        <p className="mt-4 text-xs sm:text-base md:text-lg text-champagne/80 max-w-2xl font-light tracking-wide leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] px-2">
           Step into a world of bespoke luxury, where timeless Indian heritage meets modern couture styling. Every ritual tailored for royalty.
         </p>
 
         {/* Hero CTA Actions */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-5 z-20">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 z-20 w-full max-w-sm sm:max-w-none">
           {/* Primary CTA Button */}
           <button
             onClick={onOpenBooking}
-            className="group relative px-9 py-4 bg-gold-gradient text-black font-semibold text-xs tracking-[0.25em] uppercase transition-all duration-500 overflow-hidden shadow-[0_0_30px_rgba(198,166,107,0.35)] hover:shadow-[0_0_50px_rgba(198,166,107,0.65)] hover:scale-105"
+            className="w-full sm:w-auto group relative px-7 sm:px-9 py-3.5 sm:py-4 bg-gold-gradient text-black font-semibold text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase transition-all duration-500 overflow-hidden shadow-[0_0_30px_rgba(198,166,107,0.35)] hover:shadow-[0_0_50px_rgba(198,166,107,0.65)] hover:scale-105 flex items-center justify-center"
           >
-            <span className="relative z-10 flex items-center gap-2.5">
+            <span className="relative z-10 flex items-center justify-center gap-2.5">
               <Sparkles className="w-4 h-4" />
               BOOK YOUR EXPERIENCE
             </span>
@@ -97,7 +97,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           {/* Secondary CTA Action */}
           <a
             href="#services"
-            className="group px-8 py-4 border border-gold/40 text-champagne font-medium text-xs tracking-[0.25em] uppercase transition-all duration-500 hover:border-gold hover:text-gold flex items-center gap-2 bg-[#080808]/60 backdrop-blur-md"
+            className="w-full sm:w-auto group px-7 sm:px-8 py-3.5 sm:py-4 border border-gold/40 text-champagne font-medium text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase transition-all duration-500 hover:border-gold hover:text-gold flex items-center justify-center gap-2 bg-[#080808]/60 backdrop-blur-md"
           >
             EXPLORE OUR SERVICES
             <ArrowDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-1 text-gold" />

@@ -36,6 +36,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     if (initialArtist) setArtist(initialArtist);
   }, [initialService, initialArtist]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") onClose();
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const servicesList = [
@@ -72,7 +86,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
     // Save booking to localStorage
     const bookingRecord = {
-      id: "PBS-" + Math.floor(100000 + Math.random() * 900000),
+      id: "SAR-" + Math.floor(100000 + Math.random() * 900000),
       service,
       artist,
       date: selectedDate || new Date().toISOString().split("T")[0],
@@ -80,11 +94,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       clientInfo,
       createdAt: new Date().toISOString(),
     };
-    localStorage.setItem("pbs_latest_booking", JSON.stringify(bookingRecord));
+    localStorage.setItem("sar_latest_booking", JSON.stringify(bookingRecord));
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hello Priya Beauty Salon! I would like to confirm my appointment:\n\n` +
+    `Hello Salon Apple Ravet! I would like to confirm my appointment:\n\n` +
     `✦ Service: ${service}\n` +
     `✦ Specialist: ${artist}\n` +
     `✦ Date: ${selectedDate || "Upcoming"}\n` +
@@ -94,37 +108,37 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div className="relative max-w-3xl w-full bg-[#090909] border border-gold/40 shadow-[0_0_80px_rgba(212,175,55,0.2)] p-6 sm:p-10 my-8">
+    <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+      <div className="relative max-w-3xl w-full bg-[#090909] border border-gold/40 shadow-[0_0_80px_rgba(212,175,55,0.2)] p-4 sm:p-10 my-4 sm:my-8 max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 text-champagne/70 hover:text-gold transition-colors"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 text-champagne/70 hover:text-gold transition-colors z-20"
           aria-label="Close Booking Window"
         >
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         {/* Modal Header */}
-        <div className="text-center mb-8">
-          <div className="flex justify-center mb-3">
+        <div className="text-center mb-6 sm:mb-8 pr-6 sm:pr-0">
+          <div className="flex justify-center mb-2 sm:mb-3">
             <Logo size="sm" showText={false} />
           </div>
-          <span className="text-[10px] tracking-[0.35em] gold-text uppercase font-semibold block">
+          <span className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.35em] gold-text uppercase font-semibold block">
             Exclusive Appointment Portal
           </span>
-          <h2 className="font-serif text-2xl sm:text-4xl text-white font-medium mt-1">
+          <h2 className="font-serif text-xl sm:text-4xl text-white font-medium mt-1">
             YOUR NEXT SIGNATURE LOOK STARTS HERE.
           </h2>
         </div>
 
         {/* Step Indicator Bar */}
         {!confirmed && (
-          <div className="flex items-center justify-center gap-2 mb-10 border-b border-white/10 pb-6">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-6 sm:mb-10 border-b border-white/10 pb-4 sm:pb-6 overflow-x-auto">
             {[1, 2, 3, 4, 5].map((s) => (
-              <div key={s} className="flex items-center gap-2">
+              <div key={s} className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
                 <div
-                  className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold ${
+                  className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[11px] sm:text-xs font-semibold ${
                     step === s
                       ? "bg-gold text-black shadow-[0_0_15px_rgba(212,175,55,0.6)]"
                       : step > s
@@ -134,7 +148,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 >
                   {s}
                 </div>
-                {s < 5 && <div className={`w-6 h-[1px] ${step > s ? "bg-gold" : "bg-white/10"}`} />}
+                {s < 5 && <div className={`w-3 sm:w-6 h-[1px] ${step > s ? "bg-gold" : "bg-white/10"}`} />}
               </div>
             ))}
           </div>
@@ -374,7 +388,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               RESERVATION CONFIRMED
             </h3>
             <p className="text-xs text-gold tracking-[0.25em] uppercase mt-1">
-              Priya Beauty Salon Concierge
+              Salon Apple Ravet Concierge
             </p>
 
             <div className="my-6 p-6 bg-surface border border-gold/30 text-left max-w-md mx-auto space-y-2 text-xs text-champagne">

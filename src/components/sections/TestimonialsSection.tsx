@@ -28,7 +28,7 @@ const testimonialsData: Testimonial[] = [
   },
   {
     id: "3",
-    quote: "Priya Beauty Salon is an oasis of aesthetic perfection. The attention to detail and bespoke hospitality are unmatched.",
+    quote: "Salon Apple Ravet is an oasis of aesthetic perfection. The attention to detail and bespoke hospitality are unmatched.",
     clientName: "Natasha Merchant",
     treatment: "Signature HD Makeup",
     location: "Bengaluru",
@@ -49,44 +49,44 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-24 bg-[#070707] overflow-hidden border-t border-b border-gold/10">
-      <div className="max-w-5xl mx-auto px-6 text-center">
+    <section className="relative py-16 md:py-24 bg-[#070707] overflow-hidden border-t border-b border-gold/10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         {/* Section Badge */}
         <span className="text-xs font-semibold tracking-[0.3em] gold-text uppercase block mb-4">
           Client Experience
         </span>
 
         {/* 5-Star Rating Accent */}
-        <div className="flex items-center justify-center gap-1.5 mb-6 text-gold">
+        <div className="flex items-center justify-center gap-1.5 mb-5 sm:mb-6 text-gold">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-5 h-5 fill-gold stroke-gold" />
+            <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-gold stroke-gold" />
           ))}
         </div>
 
         {/* Large Editorial Quote */}
-        <div className="min-h-[170px] flex flex-col justify-center transition-all duration-700">
-          <blockquote className="font-serif text-2xl sm:text-4xl md:text-5xl text-champagne/90 font-light leading-relaxed tracking-wide italic">
+        <div className="min-h-[200px] sm:min-h-[170px] flex flex-col justify-center transition-all duration-700">
+          <blockquote className="font-serif text-xl sm:text-4xl md:text-5xl text-champagne/90 font-light leading-relaxed tracking-wide italic">
             “{current.quote}”
           </blockquote>
 
-          <div className="mt-6">
-            <cite className="not-italic font-serif text-2xl text-white font-medium block">
+          <div className="mt-5 sm:mt-6">
+            <cite className="not-italic font-serif text-xl sm:text-2xl text-white font-medium block">
               — {current.clientName}
             </cite>
-            <span className="text-xs tracking-[0.25em] text-gold uppercase font-light mt-1 block">
+            <span className="text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.25em] text-gold uppercase font-light mt-1 block">
               {current.treatment} • {current.location}
             </span>
           </div>
         </div>
 
         {/* Navigation Controls */}
-        <div className="flex items-center justify-center gap-4 mt-8">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
           <button
             onClick={handlePrev}
-            className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:border-gold hover:bg-gold/10 transition-all"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:border-gold hover:bg-gold/10 transition-all"
             aria-label="Previous Testimonial"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           
           <div className="flex gap-2">
@@ -94,8 +94,8 @@ export const TestimonialsSection: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  activeIndex === idx ? "bg-gold w-8" : "bg-white/20 hover:bg-gold/50"
+                className={`h-2.5 rounded-full transition-all ${
+                  activeIndex === idx ? "bg-gold w-6 sm:w-8" : "bg-white/20 hover:bg-gold/50 w-2.5"
                 }`}
               />
             ))}
@@ -103,10 +103,10 @@ export const TestimonialsSection: React.FC = () => {
 
           <button
             onClick={handleNext}
-            className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:border-gold hover:bg-gold/10 transition-all"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:border-gold hover:bg-gold/10 transition-all"
             aria-label="Next Testimonial"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
       </div>

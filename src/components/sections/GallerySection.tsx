@@ -65,15 +65,15 @@ export const GallerySection: React.FC = () => {
     : galleryData.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="relative py-20 md:py-24 bg-[#080808] overflow-hidden border-t border-gold/15">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="gallery" className="relative py-16 md:py-24 bg-[#080808] overflow-hidden border-t border-gold/15">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Header & Filter Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-5">
           <div>
             <span className="text-xs font-semibold tracking-[0.3em] gold-text uppercase">
               Curated Portfolio
             </span>
-            <h2 className="font-serif text-4xl md:text-6xl text-white font-medium mt-2">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-white font-medium mt-1.5">
               EDITORIAL GALLERY
             </h2>
           </div>
@@ -84,7 +84,7 @@ export const GallerySection: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 text-xs tracking-[0.2em] uppercase transition-all duration-300 ${
+                className={`px-3.5 py-1.5 sm:px-5 sm:py-2 text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 ${
                   activeCategory === cat
                     ? "bg-gold-gradient text-black font-semibold shadow-[0_0_15px_rgba(212,175,55,0.3)]"
                     : "border border-gold/20 text-champagne/70 hover:border-gold hover:text-white"
@@ -97,7 +97,7 @@ export const GallerySection: React.FC = () => {
         </div>
 
         {/* Asymmetric Gallery Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-5 space-y-4 sm:space-y-5">
           {filteredItems.map((item) => (
             <div
               key={item.id}
@@ -109,17 +109,17 @@ export const GallerySection: React.FC = () => {
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-4 sm:p-6">
                 <div className="flex justify-end">
-                  <span className="w-10 h-10 rounded-full bg-black/60 border border-gold/40 flex items-center justify-center text-gold">
-                    <Maximize2 className="w-4 h-4" />
+                  <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 border border-gold/40 flex items-center justify-center text-gold">
+                    <Maximize2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] tracking-[0.3em] font-semibold text-gold uppercase block mb-1">
+                  <span className="text-[9px] sm:text-[10px] tracking-[0.3em] font-semibold text-gold uppercase block mb-1">
                     {item.category}
                   </span>
-                  <h3 className="font-serif text-xl text-white font-medium">
+                  <h3 className="font-serif text-lg sm:text-xl text-white font-medium">
                     {item.title}
                   </h3>
                 </div>
@@ -133,21 +133,28 @@ export const GallerySection: React.FC = () => {
       {selectedImage && (
         <div
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-6"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6"
         >
           <div className="relative max-w-4xl w-full max-h-[85vh] h-full flex flex-col items-center justify-center">
-            <div className="relative w-full h-[70vh] border border-gold/40">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-2 right-2 sm:-top-10 sm:right-0 bg-black/80 sm:bg-transparent px-3 py-1.5 rounded-full sm:rounded-none border border-gold/40 sm:border-none text-gold sm:text-white/80 hover:text-gold text-xs uppercase tracking-widest z-20 flex items-center gap-1"
+              aria-label="Close image modal"
+            >
+              ✕ Close
+            </button>
+            <div className="relative w-full h-[60vh] sm:h-[70vh] border border-gold/40">
               <img
                 src={selectedImage.imageUrl}
                 alt={selectedImage.title}
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="mt-4 text-center">
+            <div className="mt-4 text-center px-4">
               <span className="text-xs gold-text uppercase tracking-[0.3em] font-semibold">
                 {selectedImage.category}
               </span>
-              <h4 className="font-serif text-2xl text-white mt-1">
+              <h4 className="font-serif text-xl sm:text-2xl text-white mt-1">
                 {selectedImage.title}
               </h4>
             </div>

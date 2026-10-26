@@ -92,18 +92,18 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/80 to-[#080808]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-14 border-b border-gold/20 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 border-b border-gold/20 pb-6 sm:pb-8">
           <div>
             <span className="text-xs font-semibold tracking-[0.3em] gold-text uppercase">
               Bespoke Offerings
             </span>
-            <h2 className="font-serif text-4xl md:text-6xl text-white font-medium mt-2">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-white font-medium mt-2">
               SIGNATURE SERVICES
             </h2>
           </div>
-          <p className="mt-4 md:mt-0 text-champagne/70 text-sm max-w-md font-light tracking-wide">
+          <p className="mt-3 md:mt-0 text-champagne/70 text-xs sm:text-sm max-w-md font-light tracking-wide">
             Hover or select any service below to explore our signature royal beauty rituals and treatment menus.
           </p>
         </div>
@@ -111,7 +111,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         {/* Main Interactive Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center">
           {/* Left Column: Typography Service Selector List (7 Columns) */}
-          <div className="lg:col-span-7 flex flex-col space-y-4">
+          <div className="lg:col-span-7 flex flex-col space-y-3 sm:space-y-4">
             {servicesData.map((service) => {
               const isSelected = activeService.id === service.id;
               return (
@@ -119,25 +119,25 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   key={service.id}
                   onMouseEnter={() => setActiveService(service)}
                   onClick={() => setActiveService(service)}
-                  className={`group cursor-pointer p-4 sm:p-5 transition-all duration-500 border-b ${
+                  className={`group cursor-pointer p-3.5 sm:p-5 transition-all duration-500 border-b ${
                     isSelected
-                      ? "border-gold bg-surface/80 shadow-[0_0_30px_rgba(212,175,55,0.1)] translate-x-3"
+                      ? "border-gold bg-surface/80 shadow-[0_0_30px_rgba(212,175,55,0.1)] translate-x-1 sm:translate-x-3"
                       : "border-white/5 hover:border-gold/40 hover:bg-surface/30"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-3 sm:gap-6">
                       <span
-                        className={`font-serif text-lg md:text-xl transition-colors duration-300 ${
+                        className={`font-serif text-base sm:text-lg md:text-xl transition-colors duration-300 ${
                           isSelected ? "text-gold font-semibold" : "text-white/40 group-hover:text-gold/70"
                         }`}
                       >
                         {service.num}
                       </span>
                       <h3
-                        className={`font-serif text-2xl md:text-4xl tracking-wider transition-all duration-300 ${
+                        className={`font-serif text-lg sm:text-2xl md:text-4xl tracking-wider transition-all duration-300 ${
                           isSelected
-                            ? "text-white font-medium tracking-widest pl-2"
+                            ? "text-white font-medium tracking-widest pl-1 sm:pl-2"
                             : "text-champagne/70 group-hover:text-white"
                         }`}
                       >
@@ -146,7 +146,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     </div>
 
                     <ArrowRight
-                      className={`w-5 h-5 transition-all duration-300 ${
+                      className={`w-4 h-4 sm:w-5 sm:h-5 transition-all duration-300 ${
                         isSelected
                           ? "text-gold translate-x-0 opacity-100"
                           : "text-white/20 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-gold/60"
@@ -156,7 +156,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
                   {/* Active Animated Gold Line Accent */}
                   <div
-                    className={`h-[2px] bg-gold-gradient mt-4 transition-all duration-500 ${
+                    className={`h-[2px] bg-gold-gradient mt-3 sm:mt-4 transition-all duration-500 ${
                       isSelected ? "w-full opacity-100" : "w-0 opacity-0"
                     }`}
                   />
@@ -167,29 +167,29 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
           {/* Right Column: High-Fashion Visual & Detail Card (5 Columns) */}
           <div className="lg:col-span-5">
-            <div className="glass-panel p-6 rounded-none border border-gold/30 relative group overflow-hidden">
+            <div className="glass-panel p-4 sm:p-6 rounded-none border border-gold/30 relative group overflow-hidden">
               {/* Image Card Container */}
-              <div className="relative h-72 w-full mb-5 overflow-hidden border border-gold/20">
+              <div className="relative h-60 sm:h-72 w-full mb-4 sm:mb-5 overflow-hidden border border-gold/20">
                 <img
                   src={activeService.imageUrl}
                   alt={activeService.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-champagne font-light">
-                  <span className="flex items-center gap-1.5 bg-black/60 px-3 py-1 border border-gold/30">
-                    <Clock className="w-3.5 h-3.5 text-gold" />
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-[10px] sm:text-xs text-champagne font-light">
+                  <span className="flex items-center gap-1 bg-black/60 px-2 py-1 sm:px-3 border border-gold/30">
+                    <Clock className="w-3 h-3 text-gold" />
                     {activeService.duration}
                   </span>
-                  <span className="flex items-center gap-1.5 bg-black/60 px-3 py-1 border border-gold/30 gold-text font-semibold">
-                    <Tag className="w-3.5 h-3.5 text-gold" />
+                  <span className="flex items-center gap-1 bg-black/60 px-2 py-1 sm:px-3 border border-gold/30 gold-text font-semibold">
+                    <Tag className="w-3 h-3 text-gold" />
                     From {activeService.startingPrice}
                   </span>
                 </div>
               </div>
 
               {/* Title & Description */}
-              <h4 className="font-serif text-2xl text-gold font-medium mb-2">
+              <h4 className="font-serif text-xl sm:text-2xl text-gold font-medium mb-2">
                 {activeService.tagline}
               </h4>
               <p className="text-xs text-champagne/80 font-light leading-relaxed mb-4">
@@ -198,14 +198,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
               {/* Key Treatments */}
               <div className="mb-6">
-                <span className="text-[11px] font-semibold tracking-[0.2em] text-gold uppercase block mb-3">
+                <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-gold uppercase block mb-2 sm:mb-3">
                   Included Rituals
                 </span>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {activeService.treatments.map((t, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-xs text-champagne/90">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                      {t}
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                      <span>{t}</span>
                     </div>
                   ))}
                 </div>

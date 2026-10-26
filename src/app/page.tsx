@@ -34,7 +34,7 @@ export default function Home() {
       {/* 1. Cinematic Opening Intro Sequence */}
       <HeroIntro onComplete={() => setIntroFinished(true)} />
 
-      {/* 2. Top Minimal Navbar with Priya Beauty Salon Logo */}
+      {/* 2. Top Minimal Navbar with Salon Apple Ravet Logo */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
 
       {/* 3. Hero Section & 3D Centerpiece */}

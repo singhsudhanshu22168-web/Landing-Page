@@ -97,19 +97,19 @@ export const ScrollBrandMoment: React.FC = () => {
       )}
 
       {/* Overlay Brand Narrative */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
+      <div className="relative z-10 text-center max-w-3xl mx-auto px-4 sm:px-6">
         <div className="flex justify-center mb-4">
           <Logo size="lg" showText={false} animateGlow />
         </div>
-        <span className="text-xs font-semibold tracking-[0.4em] gold-text uppercase block mb-3">
+        <span className="text-[10px] sm:text-xs font-semibold tracking-[0.3em] sm:tracking-[0.4em] gold-text uppercase block mb-3">
           3D Brand Installation
         </span>
-        <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white font-medium tracking-tight leading-tight">
+        <h2 className="font-serif text-2xl sm:text-5xl md:text-6xl text-white font-medium tracking-tight leading-tight">
           WHERE ROYAL TRADITION <br />
           <span className="italic font-normal gold-text">MEETS MODERN COUTURE</span>
         </h2>
-        <p className="mt-4 text-sm text-champagne/70 font-light tracking-widest max-w-lg mx-auto leading-relaxed">
-          Every curve, ornament, and detail of Priya Beauty Salon reflects decades of dedicated craftsmanship, designed to elevate your personal beauty signature into a masterpiece.
+        <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-champagne/70 font-light tracking-wide sm:tracking-widest max-w-lg mx-auto leading-relaxed">
+          Every curve, ornament, and detail of Salon Apple Ravet reflects decades of dedicated craftsmanship, designed to elevate your personal beauty signature into a masterpiece.
         </p>
       </div>
     </section>
